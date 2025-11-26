@@ -1,7 +1,7 @@
 <template>
   <header class="bg-white shadow-sm px-6 py-4 flex justify-between items-center z-10">
     <div class="flex items-center gap-4">
-        <div class="text-2xl font-bold text-blue-600"><i class="fa-regular fa-calendar-check mr-2"></i>UniCalendar</div>
+        <div class="text-2xl font-bold text-blue-600"><i class="fa-regular fa-calendar-check mr-2"></i>日历</div>
         <div class="flex bg-gray-100 rounded-lg p-1">
             <button @click="currentView = 'month'" :class="{'bg-white shadow': currentView === 'month'}" class="px-3 py-1 rounded text-sm transition">月</button>
             <button @click="currentView = 'week'" :class="{'bg-white shadow': currentView === 'week'}" class="px-3 py-1 rounded text-sm transition">周</button>

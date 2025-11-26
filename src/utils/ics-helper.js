@@ -1,5 +1,5 @@
 export const exportICS = (events) => {
-    let icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//UniCalendar//CN\n";
+    let icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//日历//CN\n";
 
     events.forEach(evt => {
         const start = evt.date.replace(/-/g, '') + 'T' + evt.time.replace(/:/g, '') + '00';
