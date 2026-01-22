@@ -84,7 +84,41 @@ UniCalendar 是一款基于现代 Web 技术构建，并通过混合开发技术
 2. **ViewModel (逻辑层)**：Vue 的核心。它负责计算“这个月有多少天”、“今天是初几”，并监听用户的添加/删除操作。
 3. **Model (模型层)**：负责数据的存取。这里通过 LocalStorage 将数据保存在手机本地。
 
-## 🪄四.技术亮点及其实现原理
+## 四.运行项目
+
+### 4.1环境搭建
+安装前端vue3环境和android环境
+
+### 4.2运行步骤
+- 1.先从github上git clone，具体步骤见github官方教程
+  
+```
+git clone https://github.com/ahia11/cool_calendar.git
+```
+
+- 2.安装依赖
+```
+npm install
+```
+
+- 3.运行项目
+```
+npm run dev
+```
+
+- 4.构建vue.js前端应用
+```
+npm run build
+```
+
+- 5.构建android项目
+```
+npx cap sync android
+```
+
+现在你可以看见你的文件夹生成了android项目，然后直接部署到android studio上运行就可以了
+
+## 🪄五.技术亮点及其实现原理
 
 ### 4.1 动态日历网格算法 (42格计算法)
 - **难点**：一个月的日历不仅仅是当月的 1-30 号，还必须包含上个月末尾的几天（补齐第一周）和下个月开头的几天（补齐最后一周），通常需要构建一个 6行 x 7列 = 42个格子的矩阵。
@@ -107,5 +141,5 @@ UniCalendar 是一款基于现代 Web 技术构建，并通过混合开发技术
 - **实现原理**：
 	- 导出：利用 JavaScript 的字符串拼接，按照 BEGIN:VEVENT ... END:VEVENT 的格式组装文本，并转化为 Blob 对象触发浏览器下载。
 	- 导入：使用 FileReader 读取文件文本，编写了一个状态机解析器。按行读取，当遇到 BEGIN:VEVENT 时开始记录，遇到 SUMMARY 提取标题，直到 END:VEVENT 完成一个日程的转换。
-## 🤓五.总结
+## 🤓六.总结
 - 本项目成功实现了一个功能完备的日历应用。通过 Vue 3 实现了复杂的交互逻辑，利用 Tailwind CSS 保证了界面的美观与响应式，最后通过 Capacitor 完成了 Android 端的打包。这不仅锻炼了前端组件化开发能力，也实践了移动端混合开发的完整流程。
