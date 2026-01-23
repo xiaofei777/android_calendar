@@ -70,8 +70,11 @@ UniCalendar 是一款基于现代 Web 技术构建，并通过混合开发技术
 
 本应用采用经典的 **MVVM (Model-View-ViewModel)** 架构模式，实现了界面与数据的解耦。
 
+<img width="762" height="542" alt="架构图" src="https://github.com/user-attachments/assets/e6f9cd58-cbc6-4313-a3f7-16d20d5abc49" />
+
+
 ### 3.1架构流程描述
-1. **User (用户)** 点击或输入数据，触发 **View (视图层)** 的事件。
+1. **User (用户)** 点击或输入数据，触发 **View (表现层)** 的事件。
 2.  **View (Vue 3)** 将事件传递给 **ViewModel (业务逻辑层)**。
 	-  包含 useCalendar (日历算法) 和 useEventStore (数据管理)。
 3.  **ViewModel** 处理完毕后，更新响应式数据，View 自动重新渲染。
@@ -80,7 +83,7 @@ UniCalendar 是一款基于现代 Web 技术构建，并通过混合开发技术
 	- 通过 Capacitor 桥接 Android 系统功能（如通知）。
 
 ### 3.2架构解析
-1. **View (视图层)**：用户看到的界面，只负责显示。例如月视图网格的渲染。
+1. **View (表现层)**：用户看到的界面，只负责显示。例如月视图网格的渲染。
 2. **ViewModel (逻辑层)**：Vue 的核心。它负责计算“这个月有多少天”、“今天是初几”，并监听用户的添加/删除操作。
 3. **Model (模型层)**：负责数据的存取。这里通过 LocalStorage 将数据保存在手机本地。
 
